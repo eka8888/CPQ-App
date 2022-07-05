@@ -18,7 +18,7 @@ public with sharing class SF_CloneQuote {
         Set<String> quoteFieldss = new Set<String>();
         String quoteFields;
 
-       //get and sort quote and qli from customemmetadatatype
+       //get and sort quote and qli from customemmetadatatype;
         for(Clone_Quote_Fields_Mapping__mdt quoteF: cloneFields){      
             if(quoteF.QualifiedApiName == 'Quote_fields'){
                 quoteFieldss.addAll(quoteF.Fields__c.split(','));
