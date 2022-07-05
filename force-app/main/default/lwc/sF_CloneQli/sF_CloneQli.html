@@ -1,0 +1,11 @@
+<template >
+    <template for:each={clones} for:item="clone">
+        <div key={clone.Id} class="slds-col">
+            <h3  style="font-weight:bold ;">Your Quote And Qli Created Successfully</h3>
+            <p>To See New Quote Link Here⬇</p>
+           <lightning-tile ><lightning-button variant="Base" label={clone.Name} onclick={navigateToEdit} value={clone.Id} ></lightning-button>
+           </lightning-tile>
+        </div>
+    </template>
+ 
+</template>

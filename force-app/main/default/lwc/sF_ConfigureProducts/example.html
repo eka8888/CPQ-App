@@ -1,0 +1,37 @@
+<template>
+    <table>
+
+        <thead>
+            <tr class="slds-line-height_reset">
+            <th></th>
+            <th class="" scope="col" ><div class="slds-truncate" title="Name">Name</div></th>
+            <th class="" scope="col"><div class="slds-truncate" title="List Price">List Price</div></th>
+            <th class="" scope="col"><div class="slds-truncate" title="Subtotal">Subtotal</div></th>
+            <th class="" scope="col"><div class="slds-truncate" title="Quantity">Quantity</div></th>
+            <th class="" scope="col"><div class="slds-truncate" title="Unit Price">Unit Price</div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={optionProductsArray} for:item="qlis">
+                <tr  key={qlis.Id}> 
+                    <td><button onclick={showOptions}>{button}</button></td>
+                    <td>{qlis.Name__c}</td>
+                    <td>{qlis.List_Price__c}</td>
+                    <td>{qlis.Subtotal__c}</td>
+                    <td>{qlis.Quantity__c}</td>
+                    <td>{qlis.Unit_Price__c}</td>
+                </tr>
+                </template>
+        <template if:true={options} for:each={data} for:item="product">
+            <tr key={product.Id}> 
+                <td></td>
+                <td>{product.Name}</td>
+                <td>{product.List_Price__c}</td>
+                <td>{product.Subtotal__c}</td>
+                <td>{product.Quantity__c}</td>
+                <td>{product.Unit_Price__c}</td>
+            </tr>
+        </template>
+        </tbody>
+    </table>
+    </template>

@@ -1,0 +1,45 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered" aria-label="Example table of Opportunities with no row hovers">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th></th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Name">Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="List Price">List Price</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Subtotal">Subtotal</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Quantity">Quantity</div>
+              </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Subtotal">Unit Price</div>
+            </th>  
+          </tr>
+        </thead>
+
+        <tbody>
+            <template for:each={optionProductsArray} for:item="qlis"> <tr  key={qlis.Id}> 
+                <td><button data-qty={qlis.Id} onclick={showOptions} >{button}</button></td>
+                <td>{qlis.Name__c}</td>
+                <td>{qlis.List_Price__c}</td>
+                <td>{qlis.Subtotal__c}</td>
+                <td>{qlis.Quantity__c}</td>
+                <td>{qlis.Unit_Price__c}</td>
+            </tr>
+            <template if:true={options} for:each={qlis.Quote_Line_Items__r} for:item="product">
+                <tr key={product.Id}> 
+                    <td></td>
+                    <td>{product.Name}</td>
+                    <td>{product.List_Price__c}</td>
+                    <td>{product.Subtotal__c}</td>
+                    <td>{product.Quantity__c}</td>
+                    <td>{product.Unit_Price__c}</td>
+                </tr>
+            </template></template>
+        </tbody>
+      </table>
+    </template>
