@@ -28,7 +28,7 @@ public with sharing class SF_CloneQuote {
         
         String quote = String.join(new List<String>(QuoteFieldss), ', ');
          
-        //create clone quote and put fields and value
+        //create clone quote and put fields and value ;;dssfdss
         Quote__c newQuote = new Quote__c();
         Quote_Line_Item__c newQli = new Quote_Line_Item__c();
 
@@ -40,6 +40,7 @@ public with sharing class SF_CloneQuote {
          insert newQuote;
         
          return new List<Quote__c> {newQuote};
+
         
 }
 }
